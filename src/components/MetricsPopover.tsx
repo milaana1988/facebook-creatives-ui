@@ -36,6 +36,34 @@ interface MetricsPopoverProps {
   onClose: () => void;
 }
 
+/**
+ * A popover component that displays various performance metrics using charts.
+ *
+ * @example
+ * <MetricsPopover
+ *   metrics={{
+ *     impressions: 1000,
+ *     clicks: 100,
+ *     spend: 50,
+ *     conversions: 10,
+ *     ctr: 0.1
+ *   }}
+ *   anchorEl={anchorEl}
+ *   onClose={onClose}
+ * />
+ *
+ * @param {Object} metrics - An object containing performance metrics data.
+ * @param {number} metrics.impressions - The number of impressions.
+ * @param {number} metrics.clicks - The number of clicks.
+ * @param {number} metrics.spend - The amount spent.
+ * @param {number} metrics.conversions - The number of conversions.
+ * @param {number} metrics.ctr - The click-through rate.
+ * @param {HTMLElement | null} anchorEl - The element to which the popover is anchored.
+ * @param {function()} onClose - Callback function to close the popover.
+ *
+ * @returns {ReactElement} The MetricsPopover component.
+ */
+
 const MetricsPopover: React.FC<MetricsPopoverProps> = ({
   metrics,
   anchorEl,

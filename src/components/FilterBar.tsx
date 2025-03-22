@@ -7,11 +7,31 @@ interface FilterBarProps {
   onChange: (newSelected: string[]) => void;
 }
 
+/**
+ * A toggle button group for selecting labels to filter creatives by.
+ *
+ * @example
+ * <FilterBar
+ *   availableLabels={["foo", "bar", "baz"]}
+ *   selectedLabels={["foo", "bar"]}
+ *   onChange={newSelected => {}}
+ * />
+ *
+ * @param {string[]} availableLabels - The set of labels that are available to filter by.
+ * @param {string[]} selectedLabels - The set of labels that are currently selected.
+ * @param {function(string[]):void} onChange - A callback that is called whenever the set of selected labels changes.
+ */
 const FilterBar: React.FC<FilterBarProps> = ({
   availableLabels,
   selectedLabels,
   onChange,
 }) => {
+  /**
+   * A callback that is called whenever the ToggleButtonGroup's value changes.
+   *
+   * @param {React.MouseEvent<HTMLElement>} _ - The event that triggered the change.
+   * @param {string[]} newSelected - The new set of selected labels.
+   */
   const handleToggle = (
     _: React.MouseEvent<HTMLElement>,
     newSelected: string[]

@@ -7,6 +7,22 @@ interface LabelsPopoverProps {
   onClose: () => void;
 }
 
+/**
+ * A popover component that displays a list of labels as chips.
+ *
+ * @example
+ * <LabelsPopover
+ *   labels={["foo", "bar", "baz"]}
+ *   anchorEl={anchorEl}
+ *   onClose={onClose}
+ * />
+ *
+ * @param {string[]} labels - The list of labels to display.
+ * @param {HTMLElement | null} anchorEl - The element that the popover is anchored to.
+ * @param {function()} onClose - A callback that is called when the popover is closed.
+ *
+ * @returns {ReactElement} The LabelsPopover component.
+ */
 const LabelsPopover: React.FC<LabelsPopoverProps> = ({
   labels,
   anchorEl,

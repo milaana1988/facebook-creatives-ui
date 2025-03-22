@@ -21,6 +21,12 @@ interface CreativesRequestParams {
 
 const BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
+/**
+ * Fetches paginated creatives from the API.
+ * @param {number} limit - The number of creatives to fetch in one request.
+ * @param {number} [cursor] - The cursor to continue pagination from.
+ * @returns {Promise<PaginatedResponse>} - A promise that resolves to a PaginatedResponse object.
+ */
 export const fetchCreativesPaginated = async (
   limit: number,
   cursor?: number

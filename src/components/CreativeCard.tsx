@@ -16,6 +16,20 @@ interface CreativeCardProps {
   creative: Creative;
 }
 
+/**
+ * CreativeCard component displays a card with details of a creative,
+ * including its image, ID, and objective. It also provides buttons
+ * to show performance metrics and associated labels in popovers.
+ *
+ * Props:
+ * - creative (Creative): An object representing the creative, containing
+ *   its ID, image URL, performance metrics, relevant metadata, and labels.
+ *
+ * The component uses state to manage the anchors for popovers that display
+ * performance metrics and labels. Clicking the respective buttons opens
+ * the corresponding popover.
+ */
+
 const CreativeCard: React.FC<CreativeCardProps> = ({ creative }) => {
   const metrics = JSON.parse(creative.performance_metrics);
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -23,20 +37,40 @@ const CreativeCard: React.FC<CreativeCardProps> = ({ creative }) => {
     null
   );
 
+  /**
+   * Handles a click event on the metrics button by setting the anchor element
+   * state to the target element, so that the metrics popover can be displayed.
+   * @param event The event that triggered this function.
+   */
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
   };
 
+  /**
+   * Closes the metrics popover by setting the anchor element state to null.
+   */
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+  /**
+   * Handles a click event on the labels button by setting the labels anchor
+   * element state to the target element, so that the labels popover can be
+   * displayed.
+   * @param event The event that triggered this function.
+   */
   const handleLabelsClick = (event: React.MouseEvent<HTMLElement>) => {
     setLabelsAnchorEl(event.currentTarget);
   };
 
+  /**
+   * Closes the labels popover by setting the labels anchor element state to null.
+   */
+
   const handleLabelsClose = () => {
     setLabelsAnchorEl(null);
   };
+
   const imageUrl = creative.image_url || "";
   let objective = "";
   if (creative.relevant_metadata) {
@@ -56,6 +90,7 @@ const CreativeCard: React.FC<CreativeCardProps> = ({ creative }) => {
       console.error("Error parsing labels:", error);
     }
   }
+
   return (
     <>
       <Card className="shadow-2xl" sx={{ p: 1, height: 500 }}>
