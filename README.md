@@ -47,43 +47,55 @@ This project uses environment variables to configure API endpoints. In a Vite pr
 
 1. **Create a .env file in the project root:**
 
-  ```dotenv
-  VITE_API_BASE_URL="http://localhost:8000/api"
+    ```dotenv
+    VITE_API_BASE_URL="http://localhost:8000/api"
 
 2. **Restart the Development Server:**
 
   After editing the .env file, restart the dev server to ensure the changes take effect.
 
 ## Usage
+
 - **Viewing Creatives:**
+
   The main dashboard displays creative cards with images, hashtags for labels, and buttons for performance metrics.
 
 - **Filtering:**
+
   Use the filter bar (implemented with Material UI’s ToggleButtonGroup) at the top to select label filters. The dashboard updates to display only creatives that match the selected filters.
 
 - **Load More:**
+
   Click the "Load More" button at the bottom of the dashboard to fetch additional creatives from the backend API.
 
 - **Performance Metrics:** 
+
   Click the "Show Metrics" button on any creative card to view detailed performance metrics via a popover.
 
 ## Live Demo
+
   https://creatives-ui-9f021aba052c.herokuapp.com/
 
 ## Future Improvements
+
 - **Enhanced Filtering:** 
+
   Add additional filtering options and search functionality for creatives.
 
 - **User Authentication:**
+
   Integrate API authentication (Cognito, OAuth2, JWT, or API keys) to secure access to sensitive endpoints.
 
 - **Testing:**
+
   Develop a comprehensive test suite, including integration and E2E tests, to ensure the UI behaves as expected.
 
 - **Features**
+
   Implement more engaging features 
 
 ## Additional Notes
+
   This project uses Vite for fast builds and Hot Module Replacement (HMR) during development.
 
   Material UI and Tailwind CSS are integrated for rapid, customizable UI development.
