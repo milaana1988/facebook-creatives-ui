@@ -33,9 +33,12 @@ A React TypeScript application built with Vite, Material UI, and Tailwind CSS to
    cd facebook-creatives-ui
 
 2. **Install Dependencies:**
+
   ```bash
   npm install
+
 3. **Run the Development Server:**
+
   ```bash
   npm run dev
 
