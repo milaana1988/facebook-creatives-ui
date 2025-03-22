@@ -34,13 +34,13 @@ A React TypeScript application built with Vite, Material UI, and Tailwind CSS to
 
 2. **Install Dependencies:**
 
-  ```bash
-  npm install
+   ```bash
+   npm install
 
 3. **Run the Development Server:**
 
-  ```bash
-  npm run dev
+   ```bash
+   npm run dev
 
 ## Configuration
 This project uses environment variables to configure API endpoints. In a Vite project, environment variables must be prefixed with VITE_ to be accessible in the code.
